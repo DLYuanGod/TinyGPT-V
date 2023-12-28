@@ -122,7 +122,7 @@ First you need to adjust all the updated weights in the LLM to be calculated wit
                 layer.post_layernorm.weight.data = layer.post_layernorm.weight.data.float()
                 layer.input_layernorm.weight.data = layer.input_layernorm.weight.data.float()
 
-                # 对偏置项进行类似操作
+                # Perform a similar operation for the bias item
                 if layer.self_attn.q_layernorm.bias is not None:
                     layer.self_attn.q_layernorm.bias.data = layer.self_attn.q_layernorm.bias.data.float()
                 if layer.self_attn.k_layernorm.bias is not None:
