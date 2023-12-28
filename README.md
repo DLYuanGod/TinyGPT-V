@@ -163,7 +163,7 @@ torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/tinygptv_sta
 
 **Stage 4:**
 
-*Datasets: [stage 4 dataset preparation instruction](https://github.com/Vision-CAIR/MiniGPT-4/blob/main/dataset/README_MINIGPTv2_FINETUNE.md) Please prepare all datasets except COCO captions and OCR-VQA.
+* Datasets: [stage 4 dataset preparation instruction](https://github.com/Vision-CAIR/MiniGPT-4/blob/main/dataset/README_MINIGPTv2_FINETUNE.md) Please prepare all datasets except COCO captions and OCR-VQA.
 
 * Then run:
 ```
