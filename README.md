@@ -2,11 +2,11 @@
 
 <font size='5'>**TinyGPT-V: Efficient Multimodal Large Language Model via Small Backbones**</font>
 
-Zhengqing Yuan$^{❁}$, Zhaoxu Li$^{❃}$, Lichao Sun$^{❋}$
+Zhengqing Yuan❁, Zhaoxu Li❃, Lichao Sun❋
 
-$^{❁}$Anhui Polytechnic University
-$^{❃}$Nanyang Technological University
-$^{❋}$Lehigh University
+❁Anhui Polytechnic University
+❃Nanyang Technological University
+❋Lehigh University
 
 </a> <a href='https://arxiv.org.pdf'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>  <a href='https://huggingface.co/Tyrannosaurus/TinyGPT-V'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue'> 
 
@@ -50,9 +50,7 @@ conda activate tinygptv
 **TinyGPT-V** is based on Phi-2. 
 Download the corresponding LLM weights from the following huggingface space via clone the repository using git-lfs.
 
-|                            Phi-2 2.7B                                       |
-----------------------------------------------------------------------------------------------
-[Download](https://huggingface.co/susnato/phi-2)
+Phi-2 2.7B: [Download](https://huggingface.co/susnato/phi-2)
 
 
 Then, set the variable *phi_model* in the model config file to the LLM weight path.
