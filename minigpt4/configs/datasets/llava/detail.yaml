@@ -1,0 +1,6 @@
+datasets:
+  llava_detail:
+    data_type: images
+    build_info:
+      image_path: /root/autodl-tmp/train
+      ann_path: /root/autodl-tmp/minigpt/llava/detail_23k.json

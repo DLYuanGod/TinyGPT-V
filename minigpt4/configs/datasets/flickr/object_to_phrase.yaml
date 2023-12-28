@@ -1,0 +1,6 @@
+datasets:
+  flickr_ObjectToPhrase:
+    data_type: images
+    build_info:
+      image_path: /root/autodl-tmp/filtered_flickr/filtered_flickr/images
+      ann_path: /root/autodl-tmp/filtered_flickr/filtered_flickr/phrasetobbox.json

@@ -1,0 +1,8 @@
+datasets:
+  invrefcocog:
+    data_type: images
+    build_info:
+      image_path: /root/autodl-tmp/train
+      ann_path: /root/autodl-tmp/minigpt/coco
+      dataset: invrefcocog
+      splitBy: umd

@@ -1,0 +1,8 @@
+datasets:
+  refcocop:
+    data_type: images
+    build_info:
+      image_path: /root/autodl-tmp/train
+      ann_path: /root/autodl-tmp/minigpt/coco
+      dataset: refcoco+
+      splitBy: unc
