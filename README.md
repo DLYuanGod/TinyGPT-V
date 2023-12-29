@@ -111,9 +111,9 @@ in 8 bit below 8G device by setting `low_resource` to `True` in the relevant con
 * Stage 1, 2 and 3 [tinygptv_stage1_2_3_eval.yaml](eval_configs/tinygptv_stage1_2_3_eval.yaml#6) 
 
 
-<span style="color:red">
-Note: Stage 4 is currently a test version as it utilizes partial data for traing. Please use Stage 3 for the demo.
-</span>
+```diff
+-Note: Stage 4 is currently a test version as it utilizes partial data for traing. Please use Stage 3 for the demo.
+```
 
 ### Training
 
