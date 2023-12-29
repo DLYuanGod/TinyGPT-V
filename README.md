@@ -72,7 +72,7 @@ Download the pretrained model checkpoints
 
 
 For **TinyGPT-V**, set the path to the pretrained checkpoint in the evaluation config file 
-in [tinygptv_stage1_2_3_eval.yaml](eval_configs/tinygptv_stage1_2_3_eval.yaml#L10) at Line 8 for Stage 1, 2 and 3 version or [tinygptv_stage4_eval.yaml](eval_configs/minigpt4_llama2_eval.yaml#L10) for Stage 4 version.   
+in [tinygptv_stage1_2_3_eval.yaml](eval_configs/tinygptv_stage1_2_3_eval.yaml#L8) at Line 8 for Stage 1, 2 and 3 version or [tinygptv_stage4_eval.yaml](eval_configs/tinygptv_stage4_eval.yaml#L8) for Stage 4 version.   
 
 
 **4. Update the Phi-2 Modeling for transformers lib.**
