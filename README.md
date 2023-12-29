@@ -181,10 +181,13 @@ For eval. details of TinyGPT-V, check [here](eval_scripts/EVAL_README.md)
 If you're using TinyGPT-V in your research or applications, please cite using this BibTeX:
 ```bibtex
 
-@article{yuan2023tinygptv,
+@misc{yuan2023tinygptv,
       title={TinyGPT-V: Efficient Multimodal Large Language Model via Small Backbones}, 
-      author={Yuan, Zhengqing and Li, Zhaoxu and Sun, Lichao},
+      author={Zhengqing Yuan and Zhaoxu Li and Lichao Sun},
       year={2023},
+      eprint={2312.16862},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
 
