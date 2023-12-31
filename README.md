@@ -2,10 +2,9 @@
 
 <font size='5'>**TinyGPT-V: Efficient Multimodal Large Language Model via Small Backbones**</font>
 
-Zhengqing Yuan❁, Zhaoxu Li❃, Lichao Sun❋
+Zhengqing Yuan❁, Zhaoxu Li❁, Lichao Sun❋
 
-❁Anhui Polytechnic University
-❃Nanyang Technological University
+❁Visiting Students at LAIR Lab, Lehigh University
 ❋Lehigh University
 
 </a> <a href='https://arxiv.org/abs/2312.16862'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>  <a href='https://huggingface.co/Tyrannosaurus/TinyGPT-V'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue'> 
