@@ -175,7 +175,7 @@ torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/tinygptv_sta
 ### Evaluation
 For eval. details of TinyGPT-V, check [here](eval_scripts/EVAL_README.md)  
 
-## Star History
+
 
 ## Star History
 
