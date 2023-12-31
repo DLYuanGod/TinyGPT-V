@@ -175,7 +175,8 @@ torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/tinygptv_sta
 ### Evaluation
 For eval. details of TinyGPT-V, check [here](eval_scripts/EVAL_README.md)  
 
-
+## Star History
+<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://star-history.com/embed?secret=Z2hwXzJaUzJSUkdFZEZRS2hCSnJsSnk3UVFBajhnRktPUTRXYkdQUg==#DLYuanGod/TinyGPT-V&Timeline" frameBorder="0"></iframe>
 ## Acknowledgement
 
 + [MiniGPT](https://github.com/Vision-CAIR/MiniGPT-4) A very versatile model of MLLMs.
