@@ -176,7 +176,11 @@ torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/tinygptv_sta
 For eval. details of TinyGPT-V, check [here](eval_scripts/EVAL_README.md)  
 
 ## Star History
-<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://star-history.com/embed?secret=Z2hwXzJaUzJSUkdFZEZRS2hCSnJsSnk3UVFBajhnRktPUTRXYkdQUg==#DLYuanGod/TinyGPT-V&Timeline" frameBorder="0"></iframe>
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=DLYuanGod/TinyGPT-V&type=Timeline)](https://star-history.com/#DLYuanGod/TinyGPT-V&Timeline)
+
 
 ## Acknowledgement
 
