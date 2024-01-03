@@ -14,6 +14,7 @@ Zhengqing Yuan❁, Zhaoxu Li❁, Lichao Sun❋
 
 ## News
 [Jan.03 2024] Welcome to Hugging Face online demo to try out our models (for Stage-3)!
+
 [Dec.28 2023] Breaking! We release the code of our TinyGPT-V.
 
 ## TinyGPT-V Traning Process
