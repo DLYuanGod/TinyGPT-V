@@ -167,7 +167,7 @@ dependencies:
     - tornado==6.4
     - tqdm==4.64.1
     - traitlets==5.14.0
-    - transformers==4.37.0.dev0
+    - transformers==4.36.2
     - triton==2.0.0
     - typing-extensions==4.9.0
     - tzdata==2023.3
