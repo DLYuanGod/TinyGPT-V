@@ -75,10 +75,11 @@ in [tinygptv_stage1_2_3_eval.yaml](eval_configs/tinygptv_stage1_2_3_eval.yaml#L8
 
 
 **4. Update the Phi-2 Modeling for transformers lib.**
+
 Linux system:
 
 ```
-cp modeling_phi.py /miniconda3/envs/tinygptv/lib/python3.9/site-packages/transformers/models/phi/
+cp modeling_phi.py /root/miniconda3/envs/tinygptv/lib/python3.9/site-packages/transformers/models/phi/
 ```
 
 Windows system 
