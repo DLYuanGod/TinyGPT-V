@@ -182,7 +182,7 @@ For eval. details of TinyGPT-V, check [here](eval_scripts/EVAL_README.md)
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=DLYuanGod/TinyGPT-V&type=Timeline)](https://star-history.com/#DLYuanGod/TinyGPT-V&Timeline)
+[![Star History Chart](https://api.star-history.com/svg?repos=DLYuanGod/TinyGPT-V&type=Date)](https://star-history.com/#DLYuanGod/TinyGPT-V&Date)
 
 
 ## Acknowledgement
