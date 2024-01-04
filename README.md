@@ -55,7 +55,7 @@ Phi-2 2.7B: [Download](https://huggingface.co/susnato/phi-2)
 
 Then, set the variable *phi_model* in the model config file to the LLM weight path.
 
-* Set the LLM path [here](minigpt4/configs/models/minigpt_v2.yaml#L14) at Line 14 and [here](minigpt4/configs/models/minigpt4_vicuna0.yaml#L18) at Line 18.
+* Set the LLM path [here](minigpt4/configs/models/minigpt_v2.yaml#L14) at Line 14, [here](minigpt4/configs/models/minigpt4_vicuna0.yaml#L18) at Line 18 and [here](minigpt4/conversation/conversation.py#L16).
 
 
 
