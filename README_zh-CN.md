@@ -113,7 +113,7 @@ python demo.py --cfg-path eval_configs/tinygptv_stage1_2_3_eval.yaml  --gpu-id 0
 -注:第4阶段目前是测试版本，因为它使用部分数据进行训练。请使用第3阶段进行演示。
 ```
 
-### T训练
+### 训练
 
 首先，您需要调整LLM中所有更新的权重，以便以全精度计算：[Here](minigpt4\models\base_model.py). 删除以下行中的注释:
 
