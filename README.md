@@ -28,7 +28,7 @@ English | [简体中文](/README_zh-CN.md)
 ![Model](examples/TinyGPT-V-ST.png)
 
 ## TinyGPT-V Results
-![Results](examples/result.png)
+![Results](examples/result1.png)
 
 
 
