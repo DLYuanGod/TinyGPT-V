@@ -2,7 +2,7 @@
 
 <font size='5'>**TinyGPT-V: Efficient Multimodal Large Language Model via Small Backbones**</font>
 
-Zhengqing Yuan❁, Zhaoxu Li❁, Lichao Sun❋
+Zhengqing Yuan❁, Zhaoxu Li❁, [Lichao Sun](https://lichao-sun.github.io/)❋
 
 ❁Visiting Students at LAIR Lab, Lehigh University
 ❋Lehigh University
