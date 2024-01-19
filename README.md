@@ -23,9 +23,9 @@ English | [简体中文](/README_zh-CN.md)
 
 
 ## TinyGPT-V Model Structure
-### Whole Model Struture
+### Whole Model Structure
 ![Model](examples/TinyGPT-V.png)
-### Language Model Struture
+### Language Model Structure
 ![Model](examples/TinyGPT-V-ST.png)
 
 ## TinyGPT-V Traning Process
