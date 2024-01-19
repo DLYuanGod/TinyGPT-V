@@ -20,17 +20,23 @@ English | [简体中文](/README_zh-CN.md)
 
 [Dec.28 2023] Breaking! We release the code of our TinyGPT-V.
 
+
+
+## TinyGPT-V Model Structure
+### Whole Model Struture
+![Model](examples/TinyGPT-V.png)
+### Language Model Struture
+![Model](examples/TinyGPT-V-ST.png)
+
 ## TinyGPT-V Traning Process
 ![Traning_Process](examples/Training_S.png)
 
-## TinyGPT-V Model Structure
-![Model](examples/TinyGPT-V.png)
-![Model](examples/TinyGPT-V-ST.png)
-
 ## TinyGPT-V Results
+### Radar Chart
 ![Results](examples/result1.png)
 
-
+### Performance and Efficiency
+![Results](examples/result2.png)
 
 
 
