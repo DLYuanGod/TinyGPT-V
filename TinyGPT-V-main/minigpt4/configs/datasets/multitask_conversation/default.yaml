@@ -1,0 +1,7 @@
+datasets:
+  multitask_conversation:
+    data_type: images
+    build_info:
+    
+      image_path: /root/autodl-tmp/train
+      ann_path: /root/autodl-tmp/minigpt/multi-task_conversation/multitask_conversation.json

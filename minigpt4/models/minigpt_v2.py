@@ -65,7 +65,7 @@ class MiniGPTv2(MiniGPTBase):
 
         print('Loading Q-Former')
         self.Qformer, self.query_tokens = self.init_Qformer(
-            num_query_token = 32, vision_width = self.visual_encoder.num_features, freeze = False
+            num_query_token = 32, vision_width = self.visual_encoder.num_features, freeze = True
         )
         self.load_from_pretrained(url_or_filename="https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/BLIP2/blip2_pretrained_flant5xxl.pth")  # load q-former weights here
 
@@ -86,7 +86,7 @@ class MiniGPTv2(MiniGPTBase):
     
     @classmethod
     def init_Qformer(cls, num_query_token, vision_width, freeze):
-        encoder_config = BertConfig.from_pretrained("bert-base-uncased")
+        encoder_config = BertConfig.from_pretrained("/mnt/share/zhengqing/bert-base-uncased")
         encoder_config.encoder_width = vision_width
         # insert cross-attention layer every other block
         encoder_config.add_cross_attention = True

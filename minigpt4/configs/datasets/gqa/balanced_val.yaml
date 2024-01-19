@@ -15,7 +15,7 @@ datasets:
           url:
               - https://storage.googleapis.com/sfr-vision-language-research/LAVIS/datasets/gqa/train_balanced_questions.json
           storage:
-              - /root/autodl-tmp/minigpt/gqa/train_balanced_questions.json
+              - /mnt/share/mllm_data/original_data/GQA/train_balanced_questions.json
 
       images:
-          storage: /root/autodl-tmp/minigpt/gqa
+          storage: /mnt/share/mllm_data/original_data/GQA/images

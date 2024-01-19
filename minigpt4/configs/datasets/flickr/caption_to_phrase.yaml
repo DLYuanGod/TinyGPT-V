@@ -2,5 +2,5 @@ datasets:
   flickr_CaptionToPhrase:
     data_type: images
     build_info:
-      image_path: /root/autodl-tmp/filtered_flickr/filtered_flickr/images
-      ann_path: /root/autodl-tmp/filtered_flickr/filtered_flickr/captiontobbox.json
+      image_path: /mnt/share/mllm_data/original_data/FilteredFlickr-30k/flickr30k-images
+      ann_path: /mnt/share/mllm_data/original_data/FilteredFlickr-30k/captiontobbox.json

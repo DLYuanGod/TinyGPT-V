@@ -15,6 +15,6 @@ datasets:
           url:
               - https://storage.googleapis.com/sfr-vision-language-research/LAVIS/datasets/aokvqa/aokvqa_v1p0_train.json
           storage:
-              - /root/autodl-tmp/minigpt/aokvqa/aokvqa_v1p0_train.json
+              - /mnt/share/mllm_data/original_data/AOK-VQA/aokvqa_v1p0_train.json
       images:
-          storage: /root/autodl-tmp
+          storage: /mnt/share/mllm_data/original_data/COCO2014/train2014

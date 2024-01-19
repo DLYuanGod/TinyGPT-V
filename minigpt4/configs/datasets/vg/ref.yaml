@@ -2,4 +2,4 @@ datasets:
   refvg:
     data_type: images
     build_info:
-      data_dir: /root/autodl-tmp/minigpt
+      data_dir: /mnt/share/mllm_data/original_data/VisualGenome

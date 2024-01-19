@@ -11,7 +11,7 @@ from PIL import Image
 import torch
 import html
 import gradio as gr
-
+import time
 import torchvision.transforms as T
 import torch.backends.cudnn as cudnn
 
@@ -473,21 +473,22 @@ def gradio_stream_answer(chatbot, chat_state, img_list, temperature):
                                   max_length=2000)
 
     output = ''
+    previous_time = time.time()
     for new_output in streamer:
         if '###' in new_output:
-            # 如果在输出中发现 '###'，则截取至 '###' 之前的内容
+            current_time = time.time()
+            inference_time = current_time - previous_time
             new_output = new_output.split('###')[0]
             output += escape_markdown(new_output)
             chatbot[-1][1] = output
+            print(inference_time)
             yield chatbot, chat_state
-            break  # 停止循环，不再生成新的输出
+            break
 
         escapped = escape_markdown(new_output)
         output += escapped
         chatbot[-1][1] = output
         yield chatbot, chat_state
-
-    chat_state.messages[-1][1] = '</s>'
     return chatbot, chat_state
 
 
@@ -509,18 +510,18 @@ def gradio_visualize(chatbot, gr_img):
 def gradio_taskselect(idx):
     prompt_list = [
         '',
-        '[grounding] describe this image in detail',
-        '[refer] ',
-        '[detection] ',
-        '[identify] what is this ',
+        # '[grounding] describe this image in detail',
+        # '[refer] ',
+        # '[detection] ',
+        # '[identify] what is this ',
         '[vqa] '
     ]
     instruct_list = [
         '**Hint:** Type in whatever you want',
-        '**Hint:** Send the command to generate a grounded image description',
-        '**Hint:** Type in a phrase about an object in the image and send the command',
-        '**Hint:** Type in a caption or phrase, and see object locations in the image',
-        '**Hint:** Draw a bounding box on the uploaded image then send the command. Click the "clear" botton on the top right of the image before redraw',
+        # '**Hint:** Send the command to generate a grounded image description',
+        # '**Hint:** Type in a phrase about an object in the image and send the command',
+        # '**Hint:** Type in a caption or phrase, and see object locations in the image',
+        # '**Hint:** Draw a bounding box on the uploaded image then send the command. Click the "clear" botton on the top right of the image before redraw',
         '**Hint:** Send a question to get a short answer',
     ]
     return prompt_list[idx], instruct_list[idx]
@@ -530,22 +531,24 @@ def gradio_taskselect(idx):
 
 chat = Chat(model, vis_processor, device=device)
 
-title = """<h1 align="center">MiniGPT-v2 Demo</h1>"""
-description = 'Welcome to Our MiniGPT-v2 Chatbot Demo!'
+title = """<h1 align="center">TinyGPT-V Demo</h1>"""
+description = 'Welcome to Our TinyGPT-V Chatbot Demo!'
 # article = """<p><a href='https://minigpt-v2.github.io'><img src='https://img.shields.io/badge/Project-Page-Green'></a></p><p><a href='https://github.com/Vision-CAIR/MiniGPT-4/blob/main/MiniGPTv2.pdf'><img src='https://img.shields.io/badge/Paper-PDF-red'></a></p><p><a href='https://github.com/Vision-CAIR/MiniGPT-4'><img src='https://img.shields.io/badge/GitHub-Repo-blue'></a></p><p><a href='https://www.youtube.com/watch?v=atFCwV2hSY4'><img src='https://img.shields.io/badge/YouTube-Video-red'></a></p>"""
 article = """<p><a href='https://minigpt-v2.github.io'><img src='https://img.shields.io/badge/Project-Page-Green'></a></p>"""
 
 introduction = '''
 For Abilities Involving Visual Grounding:
-1. Grounding: CLICK **Send** to generate a grounded image description.
-2. Refer: Input a referring object and CLICK **Send**.
-3. Detection: Write a caption or phrase, and CLICK **Send**.
-4. Identify: Draw the bounding box on the uploaded image window and CLICK **Send** to generate the bounding box. (CLICK "clear" button before re-drawing next time).
-5. VQA: Input a visual question and CLICK **Send**.
-6. No Tag: Input whatever you want and CLICK **Send** without any tagging
+
+1. VQA: Input a visual question and CLICK **Send**.
+2. No Tag: Input whatever you want and CLICK **Send** without any tagging
 
 You can also simply chat in free form!
 '''
+
+# 1. Grounding: CLICK **Send** to generate a grounded image description.
+# 2. Refer: Input a referring object and CLICK **Send**.
+# 3. Detection: Write a caption or phrase, and CLICK **Send**.
+# 4. Identify: Draw the bounding box on the uploaded image window and CLICK **Send** to generate the bounding box. (CLICK "clear" button before re-drawing next time).
 
 text_input = gr.Textbox(placeholder='Upload your image and chat', interactive=True, show_label=False, container=False,
                         scale=8)
@@ -578,7 +581,7 @@ with gr.Blocks() as demo:
 
             dataset = gr.Dataset(
                 components=[gr.Textbox(visible=False)],
-                samples=[['No Tag'], ['Grounding'], ['Refer'], ['Detection'], ['Identify'], ['VQA']],
+                samples=[['No Tag'], ['VQA']],
                 type="index",
                 label='Task Shortcuts',
             )
@@ -592,23 +595,23 @@ with gr.Blocks() as demo:
     image.upload(image_upload_trigger, [upload_flag, replace_flag, img_list], [upload_flag, replace_flag])
 
     with gr.Row():
-        with gr.Column():
-            gr.Examples(examples=[
-                ["examples_v2/office.jpg", "[grounding] describe this image in detail", upload_flag, replace_flag,
-                 img_list],
-                ["examples_v2/sofa.jpg", "[detection] sofas", upload_flag, replace_flag, img_list],
-                ["examples_v2/2000x1372_wmkn_0012149409555.jpg", "[refer] the world cup", upload_flag, replace_flag,
-                 img_list],
-                ["examples_v2/KFC-20-for-20-Nuggets.jpg", "[identify] what is this {<4><50><30><65>}", upload_flag,
-                 replace_flag, img_list],
-            ], inputs=[image, text_input, upload_flag, replace_flag, img_list], fn=example_trigger,
-                outputs=[upload_flag, replace_flag])
+        # with gr.Column():
+        #     # gr.Examples(examples=[
+        #     #     ["examples_v2/office.jpg", "[grounding] describe this image in detail", upload_flag, replace_flag,
+        #     #      img_list],
+        #     #     ["examples_v2/sofa.jpg", "[detection] sofas", upload_flag, replace_flag, img_list],
+        #     #     ["examples_v2/2000x1372_wmkn_0012149409555.jpg", "[refer] the world cup", upload_flag, replace_flag,
+        #     #      img_list],
+        #     #     ["examples_v2/KFC-20-for-20-Nuggets.jpg", "[identify] what is this {<4><50><30><65>}", upload_flag,
+        #     #      replace_flag, img_list],
+        #     # ], inputs=[image, text_input, upload_flag, replace_flag, img_list], fn=example_trigger,
+        #     #     outputs=[upload_flag, replace_flag])
         with gr.Column():
             gr.Examples(examples=[
                 ["examples_v2/glip_test.jpg", "[vqa] where should I hide in this room when playing hide and seek",
                  upload_flag, replace_flag, img_list],
                 ["examples_v2/float.png", "Please write a poem about the image", upload_flag, replace_flag, img_list],
-                ["examples_v2/thief.png", "Is the weapon fateful", upload_flag, replace_flag, img_list],
+                # ["examples_v2/thief.png", "Is the weapon fateful", upload_flag, replace_flag, img_list],
                 ["examples_v2/cockdial.png", "What might happen in this image in the next second", upload_flag,
                  replace_flag, img_list],
             ], inputs=[image, text_input, upload_flag, replace_flag, img_list], fn=example_trigger,

@@ -2,4 +2,4 @@ datasets:
   unnatural_instruction:
     data_type: text
     build_info:
-      ann_path: /root/autodl-tmp/minigpt/unnatural_instructions/filtered_unnatural_instruction.json
+      ann_path: /mnt/share/zhengqing/filtered_unnatural_instruction.json

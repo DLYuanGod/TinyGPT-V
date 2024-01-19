@@ -11,7 +11,7 @@ model:
   # generation configs
   prompt: ""
 
-  llama_model: "/root/autodl-tmp/phi-new"
+  llama_model: "/mnt/share/zhengqing/phi-2"
   lora_r: 64
   lora_alpha: 16
 

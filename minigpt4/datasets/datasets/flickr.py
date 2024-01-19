@@ -101,8 +101,8 @@ class CaptionToObjectDataset(Dataset):
 
         instruction = "<Img><ImageHere></Img> {} ".format(instruction)
 
-        print("CaptionToObject instruction", instruction)
-        print("CaptionToObject answer", answer)
+        # print("CaptionToObject instruction", instruction)
+        # print("CaptionToObject answer", answer)
 
         return {
             "image": image,
@@ -148,8 +148,8 @@ class PhraseToObjectDataset(Dataset):
 
         instruction = "<Img><ImageHere></Img> {} ".format(instruction)
 
-        print("PhraseToObject instruction", instruction)
-        print("PhraseToObject answer", answer)
+        # print("PhraseToObject instruction", instruction)
+        # print("PhraseToObject answer", answer)
 
         return {
             "image": image,

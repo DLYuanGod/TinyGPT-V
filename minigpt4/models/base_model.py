@@ -208,24 +208,24 @@ class BaseModel(nn.Module):
                 layer.post_layernorm.weight.requires_grad = True
                 layer.input_layernorm.weight.requires_grad = True 
 
-            #     layer.self_attn.q_layernorm.weight.data = layer.self_attn.q_layernorm.weight.data.float()
-            #     layer.self_attn.k_layernorm.weight.data = layer.self_attn.k_layernorm.weight.data.float()
-            #     layer.post_layernorm.weight.data = layer.post_layernorm.weight.data.float()
-            #     layer.input_layernorm.weight.data = layer.input_layernorm.weight.data.float()
+                layer.self_attn.q_layernorm.weight.data = layer.self_attn.q_layernorm.weight.data.float()
+                layer.self_attn.k_layernorm.weight.data = layer.self_attn.k_layernorm.weight.data.float()
+                layer.post_layernorm.weight.data = layer.post_layernorm.weight.data.float()
+                layer.input_layernorm.weight.data = layer.input_layernorm.weight.data.float()
 
-            #     # 对偏置项进行类似操作
-            #     if layer.self_attn.q_layernorm.bias is not None:
-            #         layer.self_attn.q_layernorm.bias.data = layer.self_attn.q_layernorm.bias.data.float()
-            #     if layer.self_attn.k_layernorm.bias is not None:
-            #         layer.self_attn.k_layernorm.bias.data = layer.self_attn.k_layernorm.bias.data.float()
-            #     if layer.input_layernorm.bias is not None:
-            #         layer.input_layernorm.bias.data = layer.input_layernorm.bias.data.float()
+                # 对偏置项进行类似操作
+                if layer.self_attn.q_layernorm.bias is not None:
+                    layer.self_attn.q_layernorm.bias.data = layer.self_attn.q_layernorm.bias.data.float()
+                if layer.self_attn.k_layernorm.bias is not None:
+                    layer.self_attn.k_layernorm.bias.data = layer.self_attn.k_layernorm.bias.data.float()
+                if layer.input_layernorm.bias is not None:
+                    layer.input_layernorm.bias.data = layer.input_layernorm.bias.data.float()
 
 
-            # llama_model.model.model.final_layernorm.weight.requires_grad = True
-            # llama_model.model.model.final_layernorm.weight.data = llama_model.model.model.final_layernorm.weight.data.float()
-            # if llama_model.model.model.final_layernorm.bias is not None:
-            #     llama_model.model.model.final_layernorm.bias.data = llama_model.model.model.final_layernorm.bias.float()
+            llama_model.model.model.final_layernorm.weight.requires_grad = True
+            llama_model.model.model.final_layernorm.weight.data = llama_model.model.model.final_layernorm.weight.data.float()
+            if llama_model.model.model.final_layernorm.bias is not None:
+                llama_model.model.model.final_layernorm.bias.data = llama_model.model.model.final_layernorm.bias.float()
 
         else:
             for name, param in llama_model.named_parameters():

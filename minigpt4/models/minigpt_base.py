@@ -272,8 +272,10 @@ class MiniGPTBase(BaseModel):
 
     def forward(self, samples,):
         # prepare the embedding to condition and the embedding to regress
+
         cond_embeds, cond_atts, regress_embeds, regress_atts, part_targets = \
-            self.preparing_embedding(samples)
+        self.preparing_embedding(samples)
+
 
         # concat the embedding to condition and the embedding to regress
         inputs_embeds, attention_mask, input_lens = \

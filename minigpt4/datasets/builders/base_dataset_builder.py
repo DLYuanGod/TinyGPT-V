@@ -208,7 +208,7 @@ class BaseDatasetBuilder:
             ann_paths = abs_ann_paths
 
             # visual data storage path
-            vis_path = os.path.join(vis_info.storage, split)
+            vis_path = vis_info.storage
 
             if not os.path.isabs(vis_path):
                 # vis_path = os.path.join(utils.get_cache_path(), vis_path)

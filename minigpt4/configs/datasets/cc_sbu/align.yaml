@@ -2,4 +2,4 @@ datasets:
   cc_sbu_align:
     data_type: images
     build_info:
-      storage: /root/autodl-tmp/cc_sbu_align
+      storage: /mnt/share/zhengqing/InstructionGPT-4/cc_sbu_align

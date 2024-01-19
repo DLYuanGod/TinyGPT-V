@@ -1,0 +1,6 @@
+datasets:
+  ocrvqa:
+    data_type: images
+    build_info:
+      image_path: /root/autodl-tmp/minigpt/ocrvqa/images
+      ann_path: /root/autodl-tmp/minigpt/ocrvqa/dataset.json

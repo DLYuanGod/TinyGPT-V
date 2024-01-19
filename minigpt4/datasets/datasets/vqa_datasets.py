@@ -74,14 +74,13 @@ class IconQAEvalData(torch.utils.data.Dataset):
         return len(self.loaded_data)
     
     def __getitem__(self, idx):
-        data = self.loaded_data[str(idx)]
-        
-        image_id=data["split"]+"/"+data["ques_type"]+"/"+str(idx)
+        data = self.loaded_data[idx]
+        image_id = data['image_id']
         question = data['question']
         image_path = os.path.join(self.root_path, image_id, 'image.png')
         image = Image.open(image_path).convert('RGB')
         image = self.vis_processor(image).half().cuda()
-        candidates = '_'.join(data.get('choices',""))
+        candidates = '_'.join(data['choices'])
         answer = data['answer']
         question = f"[vqa] Based on the image, respond to this question with a short answer: {question}"
         return image, question, candidates, answer
@@ -97,6 +96,7 @@ class GQAEvalData(torch.utils.data.Dataset):
     
     def __getitem__(self, idx):
         ann = self.loaded_data[idx]
+
         image_id = ann["image"]
         image_path = os.path.join(self.root_path, f"{image_id}")
         image = Image.open(image_path).convert("RGB")
@@ -139,7 +139,9 @@ class VSREvalData(torch.utils.data.Dataset):
     
     def __getitem__(self, idx):
         ann = self.loaded_data[idx]
-        image_path = os.path.join(self.root_path, ann["image"])
+        image_path = os.path.join(self.root_path, 'train2017', ann["image"])
+        if not os.path.exists(image_path):
+            image_path = os.path.join(self.root_path, 'val2017', ann["image"])
         image = Image.open(image_path).convert("RGB")
         image = self.vis_processor(image)
         question = ann["caption"]

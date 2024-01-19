@@ -41,7 +41,8 @@ conv_temp.system = ""
 model.eval()
 save_path = cfg.run_cfg.save_path
 
-
+result_path = '/root/zx/XGPTv2/eval_scripts/xgptv2_cae2_ld_e16_vqa_result.txt'
+result_fout = open(result_path, 'w')
 
 for dataset in args.dataset:
     for split in eval_dict[dataset]:
@@ -126,3 +127,6 @@ for dataset in args.dataset:
                     continue
         
         print(f'{dataset} {split}:', count / total * 100, flush=True)
+
+        result_info=f'{dataset} {split}: {count / total * 100}'
+        result_fout.write(result_info + '\n')

@@ -3,5 +3,5 @@ datasets:
   llava_reason:
     data_type: images
     build_info:
-      image_path: /root/autodl-tmp/train
-      ann_path: /root/autodl-tmp/minigpt/llava/complex_reasoning_77k.json
+      image_path: /mnt/share/mllm_data/original_data/COCO2014/train2014
+      ann_path: /mnt/share/mllm_data/original_data/LLaVA/complex_reasoning_77k.json

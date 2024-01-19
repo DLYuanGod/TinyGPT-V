@@ -59,24 +59,24 @@ class OCRVQADataset(Dataset):
     def __len__(self):
         return len(self.data)
 
-def __getitem__(self, index):
-    while True:
-        try:
-            sample = self.data[index]
-            image_path = os.path.join(self.vis_root, sample['image_path'])
-            image = Image.open(image_path).convert("RGB")
-            image = self.vis_processor(image)
-            question = self.text_processor(sample["question"])
-            answer = self.text_processor(sample["answer"])
-            instruction = random.choice(self.instruction_pool).format(question)
-            instruction = "<Img><ImageHere></Img> {} ".format(instruction)
-            return {
-                "image": image,
-                "instruction_input": instruction,
-                "answer": answer,
-                "image_id": sample['image_id']
-            }
-        except FileNotFoundError:
-            print(f'File {image_path} not found. Skip to next.')
-            index = (index + 1) % len(self.data)  # 确保index不会超出范围
+    def __getitem__(self, index):
+        while True:
+            try:
+                sample = self.data[index]
+                image_path = os.path.join(self.vis_root, sample['image_path'])
+                image = Image.open(image_path).convert("RGB")
+                image = self.vis_processor(image)
+                question = self.text_processor(sample["question"])
+                answer = self.text_processor(sample["answer"])
+                instruction = random.choice(self.instruction_pool).format(question)
+                instruction = "<Img><ImageHere></Img> {} ".format(instruction)
+                return {
+                    "image": image,
+                    "instruction_input": instruction,
+                    "answer": answer,
+                    "image_id": sample['image_id']
+                }
+            except FileNotFoundError:
+                print(f'File {image_path} not found. Skip to next.')
+                index = (index + 1) % len(self.data)  # 确保index不会超出范围
     

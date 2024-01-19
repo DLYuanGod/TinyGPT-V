@@ -1,0 +1,60 @@
+model:
+  arch: minigpt_v2
+  model_type: pretrain
+  max_txt_len: 500
+  end_sym: "###"
+  low_resource: False
+  prompt_template: 'Instruct: {} /n Output: '
+  llama_model: ""
+  ckpt: ""
+  lora_r: 64
+  lora_alpha: 16
+
+
+
+datasets:
+  cc_sbu_align:
+    vis_processor:
+      train:
+        name: "blip2_image_eval"
+        image_size: 448
+    text_processor:
+      train:
+        name: "blip_caption"
+
+evaluation_datasets:
+  gqa:
+    eval_file_path: /root/autodl-tmp/evaluation/gqa/annotations/testdev_balanced_questions.json
+    img_path: /root/autodl-tmp/evaluation/gqa/images  
+    max_new_tokens: 20
+    batch_size: 10
+  vizwiz:
+    eval_file_path: /root/autodl-tmp/evaluation/vizwiz/val.json
+    img_path: /root/autodl-tmp/evaluation/vizwiz/val  
+    max_new_tokens: 20
+    batch_size: 10
+  iconvqa:
+    eval_file_path: /root/autodl-tmp/evaluation/iconqa/iconqa_data/problems.json
+    img_path: /root/autodl-tmp/evaluation/iconqa/iconqa_data/iconqa 
+    max_new_tokens: 20
+    batch_size: 1
+  vsr:
+    eval_file_path: /root/autodl-tmp/evaluation/vsr/dev.jsonl
+    img_path: /root/autodl-tmp/coco2017/train  
+    max_new_tokens: 20
+    batch_size: 10
+  hm:
+    eval_file_path: /root/autodl-tmp/evaluation/Hateful_Memes/data/dev.jsonl  
+    img_path: /root/autodl-tmp/evaluation/Hateful_Memes/data
+    max_new_tokens: 20
+    batch_size: 10
+
+run:
+  task: image_text_pretrain
+  name: minigptv2_evaluation
+  save_path: /root/MiniGPT-4/save_evalution
+
+  
+
+  
+

@@ -1,0 +1,5 @@
+datasets:
+  laion:
+    data_type: images
+    build_info:
+      storage: /root/autodl-tmp/laion_dataset_part2/{00000..05244}.tar

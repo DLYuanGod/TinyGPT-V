@@ -13,7 +13,7 @@ from typing import List, Tuple, Any
 
 from minigpt4.common.registry import registry
 
-tokenizer = AutoTokenizer.from_pretrained('/root/autodl-tmp/phi-new')
+tokenizer = AutoTokenizer.from_pretrained('/root/phi-2')
 
 class SeparatorStyle(Enum):
     """Different separator style."""
@@ -182,7 +182,7 @@ class Chat:
             temperature=float(temperature),
             pad_token_id=tokenizer.pad_token_id,
             bos_token_id=tokenizer.bos_token_id,
-            eos_token_id=tokenizer.eos_token_id,
+            eos_token_id=tokenizer.convert_tokens_to_ids("###"),
         )
         return generation_kwargs
 

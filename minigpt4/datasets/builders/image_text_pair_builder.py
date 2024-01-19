@@ -316,7 +316,6 @@ class GQABuilder(BaseDatasetBuilder):
 
 
 
-
 @registry.register_builder("flickr_grounded_caption")
 class GroundedCaptionBuilder(BaseDatasetBuilder):
     train_dataset_cls = GroundedDetailDataset

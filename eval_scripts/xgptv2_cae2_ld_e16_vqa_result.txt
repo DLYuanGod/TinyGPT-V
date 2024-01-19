@@ -1,0 +1,3 @@
+refcoco val: 6.027321395606424
+refcoco testA: 6.7526957751458365
+refcoco testB: 5.358194308145241
