@@ -9,34 +9,33 @@ Zhengqing Yuan❁, Zhaoxu Li❁, Lichao Sun❋
 
 </a> <a href='https://arxiv.org/abs/2312.16862'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>  <a href='https://huggingface.co/Tyrannosaurus/TinyGPT-V'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a> <a href='https://huggingface.co/spaces/llizhx/TinyGPT-V'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue'> 
 
-English | [简体中文](/README_zh-CN.md)
-
+[English](/README.md) | 简体中文
 </font>
 
-## News
-[Jan.03 2024] Welcome to Hugging Face online demo to try out our models (for Stage-3)!
+## 最新消息
+[Jan.03 2024] 我们创建了huggingface demo，试用我们的模型(第三阶段)!
 
-[Dec.28 2023] Breaking! We release the code of our TinyGPT-V.
+[Dec.28 2023] 我们公开了TinyGPT-V的代码.
 
-## TinyGPT-V Traning Process
+## TinyGPT-V 训练过程
 ![Traning_Process](examples/Training_S.png)
 
-## TinyGPT-V Model Structure
+## TinyGPT-V 模型结构
 ![Model](examples/TinyGPT-V-ST.png)
 
-## TinyGPT-V Results
+## TinyGPT-V 结果
 ![Results](examples/result.png)
 
 
 
 
 
-## Getting Started
-### Installation
+## 准备开始
+### 下载
 
-**1. Prepare the code and the environment**
+**1. 准备代码和环境**
 
-Git clone our repository, creating a python environment and activate it via the following command
+Git克隆我们的存储库，创建一个python环境，并通过以下命令激活它:
 
 ```bash
 git clone https://github.com/DLYuanGod/TinyGPT-V.git
@@ -46,80 +45,77 @@ conda activate tinygptv
 ```
 
 
-**2. Prepare the pretrained LLM weights**
+**2. 准备预训练的LLM权重**
 
-**TinyGPT-V** is based on Phi-2. 
-Download the corresponding LLM weights from the following huggingface space via clone the repository using git-lfs.
+**TinyGPT-V** 基于Phi-2. 
+从下面的huggingface空间下载相应的LLM权重通过git-lfs克隆存储库:
 
 Phi-2 2.7B: [Download](https://huggingface.co/susnato/phi-2)
 
 
-Then, set the variable *phi_model* in the model config file to the LLM weight path.
+然后，将模型配置文件中的变量*phi_model*设置为LLM权重路径。
 
-* Set the LLM path [here](minigpt4/configs/models/minigpt_v2.yaml#L14) at Line 14, [here](minigpt4/configs/models/minigpt4_vicuna0.yaml#L18) at Line 18 and [here](minigpt4/conversation/conversation.py#L16) at Line 16.
-
-
+* 设置LLM路径 [here](minigpt4/configs/models/minigpt_v2.yaml#L14) 在第14行, [here](minigpt4/configs/models/minigpt4_vicuna0.yaml#L18) 第18行 [here](minigpt4/conversation/conversation.py#L16) 第16行.
 
 
 
-**3. Prepare the pretrained model checkpoints**
-
-Download the pretrained model checkpoints
 
 
-| After stage-1 | After stage-2 | After stage-3| After stage-4 | 
+**3. 准备预训练的模型权重**
+
+下载预训练的模型权重*
+
+| 阶段1后 | 阶段2后 | 阶段3后 | 阶段4后 | 
 | ------ | ------ | ------ | -------|
 | [Download](https://huggingface.co/Tyrannosaurus/TinyGPT-V/blob/main/TinyGPT-V_for_Stage1.pth) |[Download](https://huggingface.co/Tyrannosaurus/TinyGPT-V/blob/main/TinyGPT-V_for_Stage2.pth) | [Download](https://huggingface.co/Tyrannosaurus/TinyGPT-V/blob/main/TinyGPT-V_for_Stage3.pth) |[Download](https://huggingface.co/Tyrannosaurus/TinyGPT-V/blob/main/TinyGPT-V_for_Stage4.pth) |
 
 
-For **TinyGPT-V**, set the path to the pretrained checkpoint in the evaluation config file 
-in [tinygptv_stage1_2_3_eval.yaml](eval_configs/tinygptv_stage1_2_3_eval.yaml#L8) at Line 8 for Stage 1, 2 and 3 version or [tinygptv_stage4_eval.yaml](eval_configs/tinygptv_stage4_eval.yaml#L8) for Stage 4 version.   
+在评估配置文件中给**TinyGPT-V**设置预训练权重的路径
+
+阶段1，2，3：[tinygptv_stage1_2_3_eval.yaml](eval_configs/tinygptv_stage1_2_3_eval.yaml#L8) ，或者阶段4：[tinygptv_stage4_eval.yaml](eval_configs/tinygptv_stage4_eval.yaml#L8) 的第8行.   
 
 
-**4. Update the Phi-2 Modeling for transformers lib.**
+**4. 更新transformers库的Phi-2模型.**
 
-Linux system:
+Linux系统:
 
 ```
 cp modeling_phi.py /root/miniconda3/envs/tinygptv/lib/python3.9/site-packages/transformers/models/phi/
 ```
 
-Windows system 
+Windows系统 
 
-Find your conda yourself: conda_sit/envs/tinygptv/lib/python3.9/site-packages/transformers/models/phi/ Replace modeling_phi.py in that directory with the one in TinyGPT-V/modeling_phi.py.
+找到你自己的: conda_sit/envs/tinygptv/lib/python3.9/site-packages/transformers/models/phi/ 然后用TinyGPT-V/modeling_phi.py 替换 modeling_phi.py .
 
 
-### Launching Demo Locally
+### 在本地创建demo
 
-For Stage 4, run
+对于阶段4, 运行
 
 ```
 python demo_v2.py --cfg-path eval_configs/tinygptv_stage4_eval.yaml  --gpu-id 0
 ```
 
-For Stage 1, 2 and 3, run
-
+对于阶段1，2，3, 运行
 ```
 python demo.py --cfg-path eval_configs/tinygptv_stage1_2_3_eval.yaml  --gpu-id 0
 ```
 
 
-To perfer more powerful model, LLMs loads as 16 bit by default. This configuration requires about 8G GPU memory. 
-To more save GPU memory, you can run the model
-in 8 bit below 8G device by setting `low_resource` to `True` in the relevant config file:
+为了使用更强大的模型，LLM默认加载为16位。此配置大约需要8G GPU内存。为了更节省GPU内存，你可以通过在相关配置文件中设置“low_resource”为“True”来以8位在8G以下的设备运行:
 
-* Stage 4 [tinygptv_stage4_eval.yaml](eval_configs/tinygptv_stage4_eval.yaml#6) 
+* 阶段4 [tinygptv_stage4_eval.yaml](eval_configs/tinygptv_stage4_eval.yaml#6) 
 
-* Stage 1, 2 and 3 [tinygptv_stage1_2_3_eval.yaml](eval_configs/tinygptv_stage1_2_3_eval.yaml#6) 
+* 阶段1，2，3 [tinygptv_stage1_2_3_eval.yaml](eval_configs/tinygptv_stage1_2_3_eval.yaml#6) 
 
 
 ```diff
--Note: Stage 4 is currently a test version as it utilizes partial data for traing. Please use Stage 3 for the demo.
+-注:第4阶段目前是测试版本，因为它使用部分数据进行训练。请使用第3阶段进行演示。
 ```
 
-### Training
+### 训练
 
-First you need to adjust all the updated weights in the LLM to be calculated with full precision:[Here](minigpt4\models\base_model.py). Remove the comments from the following lines:
+首先，您需要调整LLM中所有更新的权重，以便以全精度计算：[Here](minigpt4\models\base_model.py). 删除以下行中的注释:
 
 ```
                 layer.self_attn.q_layernorm.weight.data = layer.self_attn.q_layernorm.weight.data.float()
@@ -142,55 +138,55 @@ First you need to adjust all the updated weights in the LLM to be calculated wit
                 llama_model.model.model.final_layernorm.bias.data = llama_model.model.model.final_layernorm.bias.float()
 ```
 
-**Stage 1 and 2:**
+**阶段1，2:**
 
-* Datasets: [first stage dataset preparation instruction](https://github.com/Vision-CAIR/MiniGPT-4/blob/main/dataset/README_1_STAGE.md)
+* 数据集: [first stage dataset preparation instruction](https://github.com/Vision-CAIR/MiniGPT-4/blob/main/dataset/README_1_STAGE.md)
 
-* Then run:
+* 然后运行:
 ```
 torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/tinygptv_stage1.yaml
 ```
-You need to execute the above code 17 times to complete the first stage of training.
+您需要执行上述代码17次才能完成第一阶段的培训。
 
-* Then run:
+* 然后运行:
 ```
 torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/tinygptv_stage2.yaml
 ```
 
-**Stage 3:**
+**阶段3:**
 
-* Datasets: [stage 3 dataset preparation instruction](https://github.com/Vision-CAIR/MiniGPT-4/blob/main/dataset/README_2_STAGE.md)
+* 数据集: [stage 3 dataset preparation instruction](https://github.com/Vision-CAIR/MiniGPT-4/blob/main/dataset/README_2_STAGE.md)
 
-* Then run:
+* 然后运行:
 ```
 torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/tinygptv_stage3.yaml
 ```
 
-**Stage 4:**
+**阶段4:**
 
-* Datasets: [stage 4 dataset preparation instruction](https://github.com/Vision-CAIR/MiniGPT-4/blob/main/dataset/README_MINIGPTv2_FINETUNE.md) Please prepare all datasets except COCO captions and OCR-VQA.
+* 数据集: [stage 4 dataset preparation instruction](https://github.com/Vision-CAIR/MiniGPT-4/blob/main/dataset/README_MINIGPTv2_FINETUNE.md) 请准备所有数据集除了 COCO captions 和 OCR-VQA.
 
-* Then run:
+* 然后运行:
 ```
 torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/tinygptv_stage4.yaml
 ```
 
-### Evaluation
-For eval. details of TinyGPT-V, check [here](eval_scripts/EVAL_README.md)  
+### 评估
+查看TinyGPT-V的评估详细信息 [here](eval_scripts/EVAL_README.md)  
 
 
 
-## Star History
+## 加🌟历史
 
 [![Star History Chart](https://api.star-history.com/svg?repos=DLYuanGod/TinyGPT-V&type=Date)](https://star-history.com/#DLYuanGod/TinyGPT-V&Date)
 
 
-## Acknowledgement
+## 致谢
 
-+ [MiniGPT](https://github.com/Vision-CAIR/MiniGPT-4) A very versatile model of MLLMs.
++ [MiniGPT](https://github.com/Vision-CAIR/MiniGPT-4) 一个非常通用的MLLMs.
 
 
-If you're using TinyGPT-V in your research or applications, please cite using this BibTeX:
+如果您在您的研究或应用中使用TinyGPT-V，请使用本BibTeX引用：
 ```bibtex
 
 @misc{yuan2023tinygptv,
@@ -204,7 +200,7 @@ If you're using TinyGPT-V in your research or applications, please cite using th
 ```
 
 
-## License
-This repository is under [BSD 3-Clause License](LICENSE.md).
-Many codes are based on [Lavis](https://github.com/salesforce/LAVIS) with 
-BSD 3-Clause License [here](LICENSE_Lavis.md).
+## 许可证
+该项目开源自 [BSD 3-Clause License](LICENSE.md).
+我们的代码基于 [Lavis](https://github.com/salesforce/LAVIS) 与 
+BSD 3-Clause 许可证 [here](LICENSE_Lavis.md).

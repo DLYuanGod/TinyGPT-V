@@ -8,7 +8,7 @@ model:
 
 datasets:
   laion:
-    batch_size: 16
+    batch_size: 64
     vis_processor:
       train:
         name: "blip2_image_train"
@@ -17,6 +17,16 @@ datasets:
       train:
         name: "blip_caption"
     sample_ratio: 115
+  cc_sbu:
+    batch_size: 64
+    vis_processor:
+        train:
+          name: "blip2_image_train"
+          image_size: 224
+    text_processor:
+        train:
+          name: "blip_caption"
+    sample_ratio: 14
 
 
 run:
