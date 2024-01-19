@@ -14,6 +14,8 @@ English | [简体中文](/README_zh-CN.md)
 </font>
 
 ## News
+[Jan.19 2024] Major Updates! We are officially releasing v1 of TinyGPT-V! After our evaluation, the performance of TinyGPT-V has reached 98% of InstructBLIP's performance and exceeds the performance of other models of the same period!
+
 [Jan.03 2024] Welcome to Hugging Face online demo to try out our models (for Stage-3)!
 
 [Dec.28 2023] Breaking! We release the code of our TinyGPT-V.
@@ -22,6 +24,7 @@ English | [简体中文](/README_zh-CN.md)
 ![Traning_Process](examples/Training_S.png)
 
 ## TinyGPT-V Model Structure
+![Model](examples/TinyGPT-V.png)
 ![Model](examples/TinyGPT-V-ST.png)
 
 ## TinyGPT-V Results
@@ -113,10 +116,6 @@ in 8 bit below 8G device by setting `low_resource` to `True` in the relevant con
 * Stage 1, 2 and 3 [tinygptv_stage1_2_3_eval.yaml](eval_configs/tinygptv_stage1_2_3_eval.yaml#6) 
 
 
-```diff
--Note: Stage 4 is currently a test version as it utilizes partial data for traing. Please use Stage 3 for the demo.
-```
-
 ### Training
 
 First you need to adjust all the updated weights in the LLM to be calculated with full precision:[Here](minigpt4\models\base_model.py). Remove the comments from the following lines:
@@ -168,7 +167,7 @@ torchrun --nproc-per-node NUM_GPU train.py --cfg-path train_configs/tinygptv_sta
 
 **Stage 4:**
 
-* Datasets: [stage 4 dataset preparation instruction](https://github.com/Vision-CAIR/MiniGPT-4/blob/main/dataset/README_MINIGPTv2_FINETUNE.md) Please prepare all datasets except COCO captions and OCR-VQA.
+* Datasets: [stage 4 dataset preparation instruction](https://github.com/Vision-CAIR/MiniGPT-4/blob/main/dataset/README_MINIGPTv2_FINETUNE.md).
 
 * Then run:
 ```
