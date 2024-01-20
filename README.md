@@ -106,6 +106,9 @@ For Stage 4, run
 python demo_v2.py --cfg-path eval_configs/tinygptv_stage4_eval.yaml  --gpu-id 0
 ```
 
+Note: Stage 4 will have some Grounding abilities. But the performance is not very good, we are working on this!
+
+
 For Stage 1, 2 and 3, run
 
 ```
