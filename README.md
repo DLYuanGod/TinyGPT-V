@@ -14,6 +14,8 @@ English | [简体中文](/README_zh-CN.md)
 </font>
 
 ## News
+[Jan.22 2024] Welcome to Hugging Face online demo to try out our models (for Stage-4 v1)!
+
 [Jan.19 2024] Major Updates! We are officially releasing v1 of TinyGPT-V! After our evaluation, the performance of TinyGPT-V has reached 98% of InstructBLIP's performance and exceeds the performance of other models of the same period!
 
 [Jan.03 2024] Welcome to Hugging Face online demo to try out our models (for Stage-3)!
