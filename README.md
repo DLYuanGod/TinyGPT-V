@@ -14,6 +14,8 @@ English | [简体中文](/README_zh-CN.md)
 </font>
 
 ## News
+[Mar.20 2024] Update the Phi-2 weight download link.
+
 [Jan.22 2024] Welcome to Hugging Face online demo to try out our models (for Stage-4 v1)!
 
 [Jan.19 2024] Major Updates! We are officially releasing v1 of TinyGPT-V! After our evaluation, the performance of TinyGPT-V has reached 98% of InstructBLIP's performance and exceeds the performance of other models of the same period!
@@ -62,7 +64,7 @@ conda activate tinygptv
 **TinyGPT-V** is based on Phi-2. 
 Download the corresponding LLM weights from the following huggingface space via clone the repository using git-lfs.
 
-Phi-2 2.7B: [Download](https://huggingface.co/susnato/phi-2)
+Phi-2 2.7B: [Download](https://huggingface.co/spaces/llizhx/TinyGPT-V/tree/main/phi-2)
 
 
 Then, set the variable *phi_model* in the model config file to the LLM weight path.
