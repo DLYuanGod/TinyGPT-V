@@ -2,10 +2,11 @@
 
 <font size='5'>**TinyGPT-V: Efficient Multimodal Large Language Model via Small Backbones**</font>
 
-Zhengqing Yuan❁, Zhaoxu Li❁, [Lichao Sun](https://lichao-sun.github.io/)❋
+[Zhengqing Yuan](https://dlyuangod.github.io/zhengqingyuan/)✟, Zhaoxu Li❁, [Weiran Huang](https://www.weiranhuang.com/)❋, [Yanfang Ye](http://yes-lab.org/)✟, [Lichao Sun](https://lichao-sun.github.io/)❁
 
-❁Visiting Students at LAIR Lab, Lehigh University
-❋Lehigh University
+✟University of Notre Dame, ❁Lehigh University, ❋Shanghai Jiao Tong University
+
+Zhaoxu is a visiting student in the LAIR lab at Lehigh University.
 
 </a> <a href='https://arxiv.org/abs/2312.16862'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>  <a href='https://huggingface.co/Tyrannosaurus/TinyGPT-V'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a> <a href='https://huggingface.co/spaces/llizhx/TinyGPT-V'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue'> 
 
@@ -14,6 +15,8 @@ English | [简体中文](/README_zh-CN.md)
 </font>
 
 ## News
+[Apr.08 2024] Update our paper v2. We revised some type errors, provided more details and updated TinyGPT-V lastest results.
+
 [Mar.20 2024] Update the Phi-2 weight download link.
 
 [Jan.22 2024] Welcome to Hugging Face online demo to try out our models (for Stage-4 v1)!
