@@ -65,7 +65,7 @@ conda activate tinygptv
 **2. Prepare the pretrained LLM weights**
 
 **TinyGPT-V** is based on Phi-2. 
-Download the corresponding LLM weights from the following huggingface space via clone the repository using git-lfs.
+Download the corresponding LLM weights from the following Hugging Face space via clone the repository using git-lfs.
 
 Phi-2 2.7B: [Download](https://huggingface.co/spaces/llizhx/TinyGPT-V/tree/main/phi-2)
 
